@@ -9,6 +9,7 @@ import java.util.Iterator;
 public class FirstMenuIterator implements Iterator<MenuItem> {
 
     ArrayList<MenuItem> items;
+    private int position = 0;
 
     public FirstMenuIterator(ArrayList<MenuItem> items) {
         this.items = items;
@@ -16,12 +17,19 @@ public class FirstMenuIterator implements Iterator<MenuItem> {
 
     @Override
     public boolean hasNext() {
-        return !items.isEmpty();
+        try {
+            items.get(position);
+            return true;
+        } catch (IndexOutOfBoundsException e) {
+            return false;
+        }
     }
 
     @Override
     public MenuItem next() {
-        return items.get(items.size() - 1);
+        MenuItem menuItem = items.get(position);
+        position += 1;
+        return menuItem;
     }
 
     @Override

@@ -9,8 +9,9 @@ import java.util.Iterator;
 public class FirstMenu implements WaitresWithIterator {
     public ArrayList<MenuItem> menuItems;
 
-    public FirstMenu(ArrayList<MenuItem> menuItems) {
-        this.menuItems = menuItems;
+    public FirstMenu() {
+
+        menuItems = new ArrayList<MenuItem>();
 
         addItem("name1", "desc1", true, 2.99);
         addItem("name2", "desc2", true, 66.99);
@@ -19,12 +20,12 @@ public class FirstMenu implements WaitresWithIterator {
         addItem("name5", "desc5", true, 33.99);
     }
 
-    private void addItem(String name, String desc, boolean vegetarian, double price) {
+    public void addItem(String name, String desc, boolean vegetarian, double price) {
         menuItems.add(new MenuItem(name, desc, vegetarian, price));
     }
 
     @Override
-    public FirstMenuIterator createIterator() {
+    public Iterator createIterator() {
         return new FirstMenuIterator(menuItems);
     }
 }
