@@ -7,10 +7,10 @@ import java.util.Iterator;
  */
 public class Waitress {
 
-    FirstMenu firstMenu;
-    SecondMenu secondMenu;
+    Menu firstMenu;
+    Menu secondMenu;
 
-    public Waitress(FirstMenu firstMenu, SecondMenu secondMenu) {
+    public Waitress(Menu firstMenu, Menu secondMenu) {
         this.firstMenu = firstMenu;
         this.secondMenu = secondMenu;
     }

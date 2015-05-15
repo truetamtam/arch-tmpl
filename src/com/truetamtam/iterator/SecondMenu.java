@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * Created by truetamtam on 14.05.15.
  */
-public class SecondMenu {
+public class SecondMenu implements Menu {
 
     static final int MAX_ITEMS = 6;
     public MenuItem[] menuItems;

@@ -6,7 +6,7 @@ import java.util.Iterator;
 /**
  * Created by truetamtam on 07.05.15.
  */
-public class FirstMenu implements WaitresWithIterator {
+public class FirstMenu implements Menu {
     public ArrayList<MenuItem> menuItems;
 
     public FirstMenu() {
@@ -26,6 +26,7 @@ public class FirstMenu implements WaitresWithIterator {
 
     @Override
     public Iterator createIterator() {
-        return new FirstMenuIterator(menuItems);
+        return menuItems.iterator();
+//        return new FirstMenuIterator(menuItems);
     }
 }
