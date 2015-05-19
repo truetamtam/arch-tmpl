@@ -1,9 +1,6 @@
 package com.truetamtam;
 
-import com.truetamtam.iterator.FirstMenu;
-import com.truetamtam.iterator.Menu;
-import com.truetamtam.iterator.SecondMenu;
-import com.truetamtam.iterator.Waitress;
+import com.truetamtam.iteratorandcompounder.*;
 
 /**
  * Created by truetamtam on 15.05.15.
@@ -12,10 +9,11 @@ public class IteratorTest {
 
     public static void main(String[] args) {
 
-        Menu firstMenu = new FirstMenu();
-        Menu secondMenu = new SecondMenu();
-
-        Waitress waitress = new Waitress(firstMenu, secondMenu);
-        waitress.printMenu();
+//        IMenu firstIMenu = new FirstMenu();
+//        IMenu secondIMenu = new SecondMenu();
+//        IMenu thirdIMenu = new ThirdMenu();
+//
+//        Waitress waitress = new Waitress(firstIMenu, secondIMenu, thirdIMenu);
+//        waitress.printMenu();
     }
 }

@@ -1,4 +1,4 @@
-package com.truetamtam.iterator;
+package com.truetamtam.iteratorandcompounder;
 
 import java.util.Iterator;
 
@@ -7,22 +7,28 @@ import java.util.Iterator;
  */
 public class Waitress {
 
-    Menu firstMenu;
-    Menu secondMenu;
+    IMenu firstIMenu;
+    IMenu secondIMenu;
+    IMenu thirdIMenu;
 
-    public Waitress(Menu firstMenu, Menu secondMenu) {
-        this.firstMenu = firstMenu;
-        this.secondMenu = secondMenu;
+    public Waitress(IMenu firstIMenu, IMenu secondIMenu, IMenu thirdIMenu) {
+        this.firstIMenu = firstIMenu;
+        this.secondIMenu = secondIMenu;
+        this.thirdIMenu = thirdIMenu;
     }
 
     public void printMenu() {
 
-        Iterator firstMenuIterator = firstMenu.createIterator();
-        Iterator secondMenuIterator = secondMenu.createIterator();
+        Iterator firstMenuIterator = firstIMenu.createIterator();
+        Iterator secondMenuIterator = secondIMenu.createIterator();
+        Iterator thirdMenuIterator = thirdIMenu.createIterator();
+
         System.out.println("--- First menu ---");
         printMenu(firstMenuIterator);
         System.out.println("--- Second menu ---");
         printMenu(secondMenuIterator);
+        System.out.println("--- Third menu ---");
+        printMenu(thirdMenuIterator);
     }
 
     private void printMenu(Iterator iterator) {

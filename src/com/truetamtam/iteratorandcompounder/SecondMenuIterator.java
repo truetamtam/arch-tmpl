@@ -1,6 +1,5 @@
-package com.truetamtam.iterator;
+package com.truetamtam.iteratorandcompounder;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 
 /**

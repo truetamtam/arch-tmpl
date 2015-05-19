@@ -1,11 +1,9 @@
-package com.truetamtam.iterator;
-
-import java.util.Iterator;
+package com.truetamtam.iteratorandcompounder;
 
 /**
  * Created by truetamtam on 14.05.15.
  */
-public class SecondMenu implements Menu {
+public class SecondMenu extends MenuComponent {
 
     static final int MAX_ITEMS = 6;
     public MenuItem[] menuItems;
@@ -34,7 +32,8 @@ public class SecondMenu implements Menu {
         }
     }
 
-    public SecondMenuIterator createIterator() {
-        return new SecondMenuIterator(menuItems);
-    }
+//    public SecondMenuIterator createIterator() {
+//        return new SecondMenuIterator(menuItems);
+//    }
+
 }

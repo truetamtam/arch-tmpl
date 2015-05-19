@@ -1,12 +1,12 @@
-package com.truetamtam.iterator;
+package com.truetamtam.iteratorandcompounder;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+//import java.util.Iterator;
 
 /**
  * Created by truetamtam on 07.05.15.
  */
-public class FirstMenu implements Menu {
+public class FirstMenu extends MenuComponent {
     public ArrayList<MenuItem> menuItems;
 
     public FirstMenu() {
@@ -24,9 +24,9 @@ public class FirstMenu implements Menu {
         menuItems.add(new MenuItem(name, desc, vegetarian, price));
     }
 
-    @Override
-    public Iterator createIterator() {
-        return menuItems.iterator();
-//        return new FirstMenuIterator(menuItems);
-    }
+//    @Override
+//    public Iterator createIterator() {
+//        return menuItems.iterator();
+////        return new FirstMenuIterator(menuItems);
+//    }
 }
