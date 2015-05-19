@@ -1,6 +1,7 @@
 package com.truetamtam.iteratorandcompounder;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 public class Menu extends MenuComponent {
@@ -41,8 +42,15 @@ public class Menu extends MenuComponent {
 
     @Override
     public void print() {
-        System.out.println("\n" + getName() + "\n");
+        // Menu specs
+        System.out.println("\n" + getName());
         System.out.println(getDesc() + " ");
         System.out.println("-----------------------");
+
+        Iterator iterator = menuComponents.iterator();
+        while (iterator.hasNext()) {
+            MenuComponent menuComponent = (MenuComponent) iterator.next();
+            menuComponent.print();
+        }
     }
 }
