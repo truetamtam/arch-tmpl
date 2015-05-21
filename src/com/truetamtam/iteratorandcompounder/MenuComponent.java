@@ -1,5 +1,7 @@
 package com.truetamtam.iteratorandcompounder;
 
+import java.util.Iterator;
+
 /**
  * Created by truetamtam on 19.05.15.
  */
@@ -38,5 +40,7 @@ public abstract class MenuComponent {
     public void print() {
         throw new UnsupportedOperationException();
     }
+
+    abstract Iterator createIterator();
 
 }

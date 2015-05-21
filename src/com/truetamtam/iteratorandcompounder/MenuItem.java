@@ -1,5 +1,8 @@
 package com.truetamtam.iteratorandcompounder;
 
+import java.util.Collections;
+import java.util.Iterator;
+
 /**
  * Created by truetamtam on 14.05.15.
  */
@@ -36,5 +39,10 @@ public class MenuItem extends MenuComponent {
 
     public void print() {
         System.out.println(getName() + " " + getDesc() + "---" + getPrice());
+    }
+
+    @Override
+    public Iterator createIterator() {
+        return new NullIterator();
     }
 }

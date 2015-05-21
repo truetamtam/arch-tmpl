@@ -20,14 +20,14 @@ public class IteratorCompoundTest {
         firstMenu.add(new MenuItem("name1", "desc1", true, 2.99));
         firstMenu.add(new MenuItem("name2", "desc2", false, 66.99));
         firstMenu.add(new MenuItem("name3", "desc3", true, 3.99));
-        firstMenu.add(new MenuItem("name4", "desc4", true, 4.99));
+        firstMenu.add(new MenuItem("name4", "desc4", false, 4.99));
         firstMenu.add(new MenuItem("name5", "desc5", true, 33.99));
 
         secondMenu.add(new MenuItem("name1", "desc1", true, 2.99));
         secondMenu.add(new MenuItem("name2", "desc2", false, 66.99));
         secondMenu.add(new MenuItem("name3", "desc3", true, 3.99));
 
-        secondMenu.add(underMenu);
+        firstMenu.add(underMenu);
 
         underMenu.add(new MenuItem("name1", "desc1", true, 2.99));
         underMenu.add(new MenuItem("name2", "desc2", false, 66.99));
@@ -37,5 +37,6 @@ public class IteratorCompoundTest {
 
         Waitress waitress = new Waitress(allMenus);
         waitress.printMenu();
+        waitress.printVegetarianMenu();
     }
 }

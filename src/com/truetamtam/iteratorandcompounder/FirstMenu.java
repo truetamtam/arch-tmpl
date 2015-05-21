@@ -1,6 +1,7 @@
 package com.truetamtam.iteratorandcompounder;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 //import java.util.Iterator;
 
 /**
@@ -22,6 +23,11 @@ public class FirstMenu extends MenuComponent {
 
     public void addItem(String name, String desc, boolean vegetarian, double price) {
         menuItems.add(new MenuItem(name, desc, vegetarian, price));
+    }
+
+    @Override
+    Iterator createIterator() {
+        return null;
     }
 
 //    @Override

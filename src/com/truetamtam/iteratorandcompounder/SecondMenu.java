@@ -1,5 +1,7 @@
 package com.truetamtam.iteratorandcompounder;
 
+import java.util.Iterator;
+
 /**
  * Created by truetamtam on 14.05.15.
  */
@@ -30,6 +32,11 @@ public class SecondMenu extends MenuComponent {
             menuItems[itemsCount] = menuItem;
             itemsCount += 1;
         }
+    }
+
+    @Override
+    public Iterator createIterator() {
+        return null;
     }
 
 //    public SecondMenuIterator createIterator() {
