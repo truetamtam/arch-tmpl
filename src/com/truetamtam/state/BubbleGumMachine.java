@@ -57,7 +57,7 @@ public class BubbleGumMachine {
     @Override
     public String toString() {
         return "BubbleGumMachine{" +
-                "state=" + state +
+                "state=" + state.getClass().getSimpleName() +
                 ", count=" + count +
                 '}';
     }

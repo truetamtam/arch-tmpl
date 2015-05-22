@@ -14,7 +14,7 @@ public class SNoCoin implements IState {
     @Override
     public void insertCoin() {
 
-        if (this.bubbleGumMachine.hasCount(1)) {
+        if (!this.bubbleGumMachine.hasCount(1)) {
             this.bubbleGumMachine.setState(this.bubbleGumMachine.sSoldOut);
             System.out.println("Out of bubble gum! Sorry.");
             this.bubbleGumMachine.dispese();
@@ -36,7 +36,6 @@ public class SNoCoin implements IState {
     @Override
     public void turnCrunk() {
         System.out.println("No coin is inserted.");
-        this.bubbleGumMachine.setState(this.bubbleGumMachine.sSold);
     }
 
     @Override

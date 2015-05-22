@@ -29,6 +29,7 @@ public class SHasCoin implements IState {
     @Override
     public void turnCrunk() {
         System.out.println("Here's your gum ball.");
+        this.bubbleGumMachine.count -= 1;
         this.bubbleGumMachine.setState(this.bubbleGumMachine.sSold);
     }
 
