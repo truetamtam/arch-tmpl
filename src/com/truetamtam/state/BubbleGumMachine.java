@@ -13,7 +13,6 @@ public class BubbleGumMachine {
     IState sHasCoin;
     IState sSold;
     IState sSoldOut;
-    IState sStockOut;
 
     public BubbleGumMachine(int count) {
         this.count = count;
@@ -22,6 +21,8 @@ public class BubbleGumMachine {
 
         this.sNoCoin = new SNoCoin(this);
         this.sHasCoin = new SHasCoin(this);
+        this.sSold = new SSold(this);
+        this.sSoldOut = new SSoldOut(this);
     }
 
     public void insertCoin() {
@@ -42,5 +43,22 @@ public class BubbleGumMachine {
 
     public void setState(IState state) {
         this.state = state;
+    }
+
+    public boolean hasCount(int count) {
+        return this.count >= count;
+    }
+
+    public void refill(int count) {
+        this.count = count;
+        this.state = sNoCoin;
+    }
+
+    @Override
+    public String toString() {
+        return "BubbleGumMachine{" +
+                "state=" + state +
+                ", count=" + count +
+                '}';
     }
 }
