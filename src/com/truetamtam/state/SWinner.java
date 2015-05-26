@@ -7,6 +7,7 @@ public class SWinner implements IState {
 
     BubbleGumMachine bubbleGumMachine;
 
+
     public SWinner(BubbleGumMachine bubbleGumMachine) {
         this.bubbleGumMachine = bubbleGumMachine;
     }

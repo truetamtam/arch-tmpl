@@ -1,7 +1,6 @@
 package com.truetamtam.state_origin;
 
 public class SoldState implements State {
- 
     GumballMachine gumballMachine;
  
     public SoldState(GumballMachine gumballMachine) {
@@ -34,5 +33,3 @@ public class SoldState implements State {
 		return "dispensing a gumball";
 	}
 }
-
-
