@@ -35,15 +35,31 @@ public class BubbleGumMachine {
 
     public void turnCrunk() {
         state.turnCrunk();
-    }
-
-    public void dispese() {
         state.dispense();
     }
+
 
     public void setState(IState state) {
         this.state = state;
     }
+
+
+    public IState getsNoCoin() {
+        return sNoCoin;
+    }
+
+    public IState getsHasCoin() {
+        return sHasCoin;
+    }
+
+    public IState getsSold() {
+        return sSold;
+    }
+
+    public IState getsSoldOut() {
+        return sSoldOut;
+    }
+
 
     public boolean hasCount(int count) {
         return this.count >= count;
