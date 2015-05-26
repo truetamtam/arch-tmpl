@@ -1,11 +1,15 @@
 package com.truetamtam.state;
 
+import java.util.Random;
+
 /**
  * Created by truetamtam on 22.05.15.
  */
 public class SHasCoin implements IState {
 
     BubbleGumMachine bubbleGumMachine;
+    // random winner
+    Random randomWinner = new Random(System.currentTimeMillis());
 
     public SHasCoin(BubbleGumMachine bubbleGumMachine) {
         this.bubbleGumMachine = bubbleGumMachine;
@@ -18,23 +22,20 @@ public class SHasCoin implements IState {
 
     @Override
     public void ejectCoin() {
-        if (this.bubbleGumMachine.state instanceof SHasCoin) {
-            this.bubbleGumMachine.setState(this.bubbleGumMachine.sNoCoin);
-            System.out.println("Coin ejected");
-        } else {
-            System.out.println("No coin here!");
-        }
+        this.bubbleGumMachine.setState(bubbleGumMachine.getsNoCoin());
+        System.out.println("Coin ejected");
     }
 
     @Override
     public void turnCrunk() {
-        if (this.bubbleGumMachine.hasCount(1)) {
+        System.out.println("Crunk turn!");
+        int winner = randomWinner.nextInt(10);
+
+        if ((winner == 0) && this.bubbleGumMachine.hasCount(1)) {
             System.out.println("Here's your gum ball.");
-            this.bubbleGumMachine.count -= 1;
-            this.bubbleGumMachine.setState(this.bubbleGumMachine.sSold);
+            this.bubbleGumMachine.setState(bubbleGumMachine.getsWinner());
         } else {
-            System.out.println("Sorry, sold out.");
-            this.bubbleGumMachine.setState(this.bubbleGumMachine.sSoldOut);
+            this.bubbleGumMachine.setState(bubbleGumMachine.getsSold());
         }
     }
 

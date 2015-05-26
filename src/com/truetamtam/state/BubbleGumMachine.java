@@ -40,6 +40,15 @@ public class BubbleGumMachine {
         state.dispense();
     }
 
+    public void releaseBall() {
+        if (this.count != 0) {
+            this.count -= 1;
+            System.out.println("Here's your gumball.");
+        } else {
+            System.out.println("Out of ballz.");
+            this.setState(this.getsSoldOut());
+        }
+    }
 
     public void setState(IState state) {
         this.state = state;

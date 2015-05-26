@@ -8,13 +8,26 @@ import com.truetamtam.state.BubbleGumMachine;
 public class GumballGodTest {
 
     public static void main(String[] args) {
-        BubbleGumMachine machine = new BubbleGumMachine(5);
+        BubbleGumMachine machine = new BubbleGumMachine(3);
 
         machine.insertCoin();
-        machine.dispese();
         machine.turnCrunk();
-        machine.turnCrunk();
+        System.out.println(machine.toString());
 
+        machine.insertCoin();
+        machine.turnCrunk();
+        System.out.println(machine.toString());
+
+        machine.insertCoin();
+        machine.turnCrunk();
+        System.out.println(machine.toString());
+
+        machine.insertCoin();
+        machine.turnCrunk();
+        System.out.println(machine.toString());
+
+        machine.insertCoin();
+        machine.turnCrunk();
         System.out.println(machine.toString());
     }
 }

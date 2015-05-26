@@ -29,8 +29,13 @@ public class SWinner implements IState {
 
     @Override
     public void dispense() {
-        this.bubbleGumMachine.count -= 1;
-        System.out.println("Your gum ball!");
-        System.out.println("Your gum ball!");
+        System.out.println("You are a winner! Wow!");
+        bubbleGumMachine.releaseBall();
+        if (bubbleGumMachine.hasCount(1)) {
+            bubbleGumMachine.releaseBall();
+            bubbleGumMachine.setState(bubbleGumMachine.getsNoCoin());
+        } else {
+            bubbleGumMachine.setState(bubbleGumMachine.getsSoldOut());
+        }
     }
 }

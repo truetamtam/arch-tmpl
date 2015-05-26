@@ -13,19 +13,14 @@ public class SNoCoin implements IState {
 
     @Override
     public void insertCoin() {
-
-        if (!this.bubbleGumMachine.hasCount(1)) {
-            this.bubbleGumMachine.setState(this.bubbleGumMachine.sSoldOut);
-            System.out.println("Out of bubble gum! Sorry.");
-            this.bubbleGumMachine.dispese();
-            return;
-        }
-
-        if (this.bubbleGumMachine.state instanceof SHasCoin) {
-            System.out.println("Coin already inserted!");
+        if (bubbleGumMachine.hasCount(1)) {
+            System.out.println("Coin inserted. Nyam.");
+            bubbleGumMachine.setState(bubbleGumMachine.getsHasCoin());
         } else {
-            this.bubbleGumMachine.setState(this.bubbleGumMachine.sHasCoin);
+            System.out.println("Sold out. Sorry.");
+            bubbleGumMachine.setState(bubbleGumMachine.getsSoldOut());
         }
+
     }
 
     @Override

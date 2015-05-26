@@ -13,9 +13,7 @@ public class SSold implements IState {
 
     @Override
     public void insertCoin() {
-        if (this.bubbleGumMachine.hasCount(1)) {
-            this.bubbleGumMachine.setState(this.bubbleGumMachine.sHasCoin);
-        }
+        System.out.println("Coin is inserted. No need for second one, now.");
     }
 
     @Override
@@ -30,6 +28,8 @@ public class SSold implements IState {
 
     @Override
     public void dispense() {
-        System.out.println("No coin is inserted!");
+        System.out.println("Dispensing ball.");
+        bubbleGumMachine.releaseBall();
+        bubbleGumMachine.setState(bubbleGumMachine.getsNoCoin());
     }
 }
