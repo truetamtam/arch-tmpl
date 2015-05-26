@@ -22,15 +22,20 @@ public class SHasCoin implements IState {
             this.bubbleGumMachine.setState(this.bubbleGumMachine.sNoCoin);
             System.out.println("Coin ejected");
         } else {
-            System.out.println("Coin is ejected!");
+            System.out.println("No coin here!");
         }
     }
 
     @Override
     public void turnCrunk() {
-        System.out.println("Here's your gum ball.");
-        this.bubbleGumMachine.count -= 1;
-        this.bubbleGumMachine.setState(this.bubbleGumMachine.sSold);
+        if (this.bubbleGumMachine.hasCount(1)) {
+            System.out.println("Here's your gum ball.");
+            this.bubbleGumMachine.count -= 1;
+            this.bubbleGumMachine.setState(this.bubbleGumMachine.sSold);
+        } else {
+            System.out.println("Sorry, sold out.");
+            this.bubbleGumMachine.setState(this.bubbleGumMachine.sSoldOut);
+        }
     }
 
     @Override

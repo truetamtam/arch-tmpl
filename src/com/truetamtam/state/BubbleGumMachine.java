@@ -43,6 +43,10 @@ public class BubbleGumMachine {
         state.dispense();
     }
 
+    public IState getsWinner() {
+        return sWinner;
+    }
+
     public void setState(IState state) {
         this.state = state;
     }

@@ -13,11 +13,7 @@ public class SWinner implements IState {
 
     @Override
     public void insertCoin() {
-        if (this.bubbleGumMachine.hasCount(1)) {
-            this.bubbleGumMachine.setState(this.bubbleGumMachine.sHasCoin);
-        } else {
-            this.bubbleGumMachine.setState(this.bubbleGumMachine.sNoCoin);
-        }
+        System.out.println("Already inserted.");
     }
 
     @Override
@@ -27,11 +23,13 @@ public class SWinner implements IState {
 
     @Override
     public void turnCrunk() {
-        System.out.println("No coin is inserted.");
+        System.out.println("No.");
     }
 
     @Override
     public void dispense() {
-        System.out.println("No coin is inserted.");
+        this.bubbleGumMachine.count -= 1;
+        System.out.println("Your gum ball!");
+        System.out.println("Your gum ball!");
     }
 }
