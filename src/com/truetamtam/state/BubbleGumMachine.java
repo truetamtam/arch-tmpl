@@ -13,6 +13,7 @@ public class BubbleGumMachine {
     IState sHasCoin;
     IState sSold;
     IState sSoldOut;
+    IState sWinner;
 
     public BubbleGumMachine(int count) {
         this.count = count;
@@ -23,6 +24,7 @@ public class BubbleGumMachine {
         this.sHasCoin = new SHasCoin(this);
         this.sSold = new SSold(this);
         this.sSoldOut = new SSoldOut(this);
+        this.sWinner = new SWinner(this);
     }
 
     public void insertCoin() {
