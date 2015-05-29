@@ -19,7 +19,7 @@ public class BubbleGumMachine extends UnicastRemoteObject implements IBubbleGumM
     IState sSoldOut;
     IState sWinner;
 
-    public BubbleGumMachine(int count, String location) throws RemoteException {
+    public BubbleGumMachine(String location, int count) throws RemoteException {
         this.count = count;
 
         this.state = new SNoCoin(this);
