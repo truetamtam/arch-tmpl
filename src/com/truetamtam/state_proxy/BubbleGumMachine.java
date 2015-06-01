@@ -3,9 +3,6 @@ package com.truetamtam.state_proxy;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-/**
- * Created by truetamtam on 22.05.15.
- */
 public class BubbleGumMachine extends UnicastRemoteObject implements IBubbleGumMachineRemote {
 
     IState state;
