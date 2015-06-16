@@ -5,10 +5,11 @@ import java.rmi.RemoteException;
 /**
  * Created by DC on 29.05.2015.
  */
-public class BubbleGubMachineRemote {
+public class BubbleGumMachineMonitor {
     IBubbleGumMachineRemote machine;
 
-    public BubbleGubMachineRemote(IBubbleGumMachineRemote machine) {
+    public BubbleGumMachineMonitor(IBubbleGumMachineRemote machine) {
+
         this.machine = machine;
     }
 

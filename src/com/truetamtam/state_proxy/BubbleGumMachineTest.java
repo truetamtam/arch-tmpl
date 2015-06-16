@@ -9,8 +9,9 @@ public class BubbleGumMachineTest {
 
         IBubbleGumMachineRemote gumballMachine = null;
         int count;
+
         if (args.length < 2) {
-            System.out.println("GumballMachine <name> <inventory>");
+            System.out.println("BubbleGumMachine <name> <inventory>");
             System.exit(1);
         }
 
@@ -18,7 +19,7 @@ public class BubbleGumMachineTest {
             count = Integer.parseInt(args[1]);
 
             gumballMachine = new BubbleGumMachine(args[0], count);
-            Naming.rebind("//" + args[0] + "/gumballmachine", gumballMachine);
+            Naming.rebind("//" + args[0] + "/bubblegummachine", gumballMachine);
         } catch (Exception e) {
             e.printStackTrace();
         }
