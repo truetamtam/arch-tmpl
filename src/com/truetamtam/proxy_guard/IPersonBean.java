@@ -13,5 +13,5 @@ public interface IPersonBean {
     void setName(String name);
     void setGender(String gender);
     void setInterests(String interests);
-    void setHotOrNotRating();
+    void setHotOrNotRating(int rating);
 }
