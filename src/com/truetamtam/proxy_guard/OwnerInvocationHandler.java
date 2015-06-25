@@ -1,9 +1,6 @@
 package com.truetamtam.proxy_guard;
 
-import com.truetamtam.proxy_origin.javaproxy.PersonBean;
-
 import java.lang.reflect.*;
-
 
 public class OwnerInvocationHandler implements InvocationHandler {
 

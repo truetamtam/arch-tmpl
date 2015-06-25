@@ -1,7 +1,5 @@
 package com.truetamtam.proxy_guard;
 
-import com.truetamtam.proxy_origin.javaproxy.PersonBean;
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

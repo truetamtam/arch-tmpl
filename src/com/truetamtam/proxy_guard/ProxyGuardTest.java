@@ -1,5 +1,6 @@
 package com.truetamtam.proxy_guard;
 
+import java.lang.reflect.Proxy;
 import java.util.*;
 
 /**
@@ -19,7 +20,25 @@ public class ProxyGuardTest {
     }
 
     private void drive() {
+        PersonBean owner = datingDb.get("Roman");
+        PersonBean proxyOwner = getOwnerProxy(owner);
 
+        PersonBean nonOwner = datingDb.get("Zwetika");
+        PersonBean proxyNonOwner = getNonOwnerProxy(nonOwner);
+    }
+
+    PersonBean getNonOwnerProxy(PersonBean nonOwner) {
+        return (PersonBean) Proxy.newProxyInstance(
+                nonOwner.getClass().getClassLoader(),
+                nonOwner.getClass().getInterfaces(),
+                new NonOwnerInvocationHandler(nonOwner));
+    }
+
+    PersonBean getOwnerProxy(PersonBean owner) {
+        return (PersonBean) Proxy.newProxyInstance(
+                owner.getClass().getClassLoader(),
+                owner.getClass().getInterfaces(),
+                new OwnerInvocationHandler(owner));
     }
 
     private void initializeDb() {
