@@ -7,9 +7,9 @@ import java.lang.reflect.Method;
 
 public class NonOwnerInvocationHandler implements InvocationHandler {
 
-    PersonBean person;
+    IPersonBean person;
 
-    public NonOwnerInvocationHandler(PersonBean person) {
+    public NonOwnerInvocationHandler(IPersonBean person) {
         this.person = person;
     }
 

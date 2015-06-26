@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class ProxyGuardTest {
 
-    Hashtable<String, PersonBean> datingDb = new Hashtable<String, PersonBean>();
+    Hashtable<String, IPersonBean> datingDb = new Hashtable<String, IPersonBean>();
 
     public ProxyGuardTest() {
         initializeDb();
@@ -20,36 +20,42 @@ public class ProxyGuardTest {
     }
 
     private void drive() {
-        PersonBean owner = datingDb.get("Roman");
-        PersonBean proxyOwner = getOwnerProxy(owner);
+        IPersonBean owner = datingDb.get("Roman");
+        IPersonBean proxyOwner = getOwnerProxy(owner);
 
-        PersonBean nonOwner = datingDb.get("Zwetika");
-        PersonBean proxyNonOwner = getNonOwnerProxy(nonOwner);
+        IPersonBean nonOwner = datingDb.get("Zwetika");
+        IPersonBean proxyNonOwner = getNonOwnerProxy(nonOwner);
+
+        try {
+            proxyOwner.setHotOrNotRating(10);
+        } catch (Exception e) {
+            System.out.println("Can't set self rating.");
+        }
     }
 
-    PersonBean getNonOwnerProxy(PersonBean nonOwner) {
-        return (PersonBean) Proxy.newProxyInstance(
+    IPersonBean getNonOwnerProxy(IPersonBean nonOwner) {
+        return (IPersonBean) Proxy.newProxyInstance(
                 nonOwner.getClass().getClassLoader(),
                 nonOwner.getClass().getInterfaces(),
                 new NonOwnerInvocationHandler(nonOwner));
     }
 
-    PersonBean getOwnerProxy(PersonBean owner) {
-        return (PersonBean) Proxy.newProxyInstance(
+    IPersonBean getOwnerProxy(IPersonBean owner) {
+        return (IPersonBean) Proxy.newProxyInstance(
                 owner.getClass().getClassLoader(),
                 owner.getClass().getInterfaces(),
                 new OwnerInvocationHandler(owner));
     }
 
     private void initializeDb() {
-        PersonBean me = new PersonBean();
+        IPersonBean me = new PersonBean();
         me.setName("Roman");
         me.setGender("Male");
         me.setInterests("some");
         me.setHotOrNotRating(10);
         datingDb.put(me.getName(), me);
 
-        PersonBean her = new PersonBean();
+        IPersonBean her = new PersonBean();
         her.setName("Zwetika");
         her.setGender("Female");
         her.setInterests("Some2");

@@ -4,9 +4,9 @@ import java.lang.reflect.*;
 
 public class OwnerInvocationHandler implements InvocationHandler {
 
-    PersonBean person;
+    IPersonBean person;
 
-    public OwnerInvocationHandler(PersonBean person) {
+    public OwnerInvocationHandler(IPersonBean person) {
         this.person = person;
     }
 
