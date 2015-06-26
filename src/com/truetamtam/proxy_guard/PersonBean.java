@@ -28,7 +28,7 @@ public class PersonBean implements IPersonBean {
 
     @Override
     public int getHotOrNotRating() {
-        return rating;
+        return (rating / ratingCount);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class PersonBean implements IPersonBean {
 
     @Override
     public void setHotOrNotRating(int rating) {
-        this.ratingCount += 1;
-        this.rating = (this.rating + rating) / ratingCount;
+        this.ratingCount++;
+        this.rating += rating;
     }
 }
