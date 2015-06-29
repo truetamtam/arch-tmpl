@@ -26,6 +26,8 @@ public class ProxyGuardTest {
         IPersonBean nonOwner = datingDb.get("Zwetika");
         IPersonBean proxyNonOwner = getNonOwnerProxy(nonOwner);
 
+        System.out.println("Owner name is: " + proxyOwner.getName());
+
         proxyNonOwner.setHotOrNotRating(15);
         System.out.println("Non owner is HotOrNot is set. Now: " + proxyNonOwner.getHotOrNotRating());
 
