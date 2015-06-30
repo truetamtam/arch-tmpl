@@ -15,4 +15,14 @@ public class GooseAdapter implements Quackable {
     public void quack() {
         this.goose.honk();
     }
+
+    @Override
+    public void registerObserver(Observer observer) {
+
+    }
+
+    @Override
+    public void notifyObservers() {
+
+    }
 }

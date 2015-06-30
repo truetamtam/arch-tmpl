@@ -8,7 +8,12 @@ import java.util.Iterator;
  */
 public class Flock implements Quackable {
 
+    Observable observable;
     ArrayList<Quackable> quackers = new ArrayList<Quackable>();
+
+    public Flock() {
+        this.observable = new Observable(this);
+    }
 
     public void add(Quackable duck) {
         quackers.add(duck);
@@ -21,5 +26,19 @@ public class Flock implements Quackable {
             Quackable quacker = (Quackable) iterator.next();
             quacker.quack();
         }
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        Iterator iterator = quackers.iterator();
+        while (iterator.hasNext()) {
+            Quackable duck = (Quackable)iterator.next();
+            duck.registerObserver(observer);
+        }
+        observable.registerObserver(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
     }
 }

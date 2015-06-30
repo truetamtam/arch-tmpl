@@ -6,7 +6,6 @@ package com.truetamtam.quackable;
 public class QuackCounter implements Quackable {
 
     Quackable duck;
-
     static int quacks;
 
     public QuackCounter(Quackable duck) {
@@ -17,9 +16,24 @@ public class QuackCounter implements Quackable {
     public void quack() {
         this.duck.quack();
         quacks++;
+        notifyObservers();
     }
 
     public static int getQuacks() {
         return quacks;
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        duck.registerObserver(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        duck.notifyObservers();
+    }
+
+    public String toString() {
+        return duck.toString();
     }
 }
